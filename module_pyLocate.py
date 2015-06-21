@@ -1,5 +1,5 @@
-# module for pyLocate, a program thar search files only in chosen directories 
-#  
+# module for pyLocate, a program thar search files only in chosen directories
+#
 #    Copyright (C) 2015  Edoardo Codispoti
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -31,10 +31,10 @@ def printOutputFile(locationInputFile):
     count = 0
     list = []
     for line in inputFile:
-        str_control = re.compile('\S[\][.]\S') # find files only visible
+        str_control = re.compile('\S(/\.)\S') # find files only visible
         match_control = str_control.search(line)
 
-        if (match_control):
+        if (match_control == None):
             count = count + 1
             list.append(line)
 
