@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=pyLocate
+Comment=search file in only chosen directories
+Exec=pyLocate
+Terminal=true
