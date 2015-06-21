@@ -1,0 +1,6 @@
+#!/bin/bash
+# Unistallation script
+
+echo Removing pyLocate
+rm -r $HOME/.pyLocateDir $HOME/.config/pyLocate.conf
+sudo rm /usr/bin/pyLocate

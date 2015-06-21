@@ -1,0 +1,47 @@
+#!/usr/bin/python3
+# The program performs the locate command only in the directories specified in
+# the configuration file $HOME/.config/pyLocate.conf
+
+
+import sys
+import os
+import module_pyLocate
+
+os.system('$HOME/.pyLocateDir/pyLocate_init.sh')
+
+name2find = ''
+
+choise = 0
+while choise != 'esci':
+    os.system('clear')
+
+    inputStr = input('Name : ' + name2find)
+    name2find = name2find + inputStr
+
+    # search name2find 
+    os.system('locate ' + name2find + ' -i -d /tmp/pyLocate/databasepyLocate >> /tmp/pyLocate/outputpyLocateFile' )
+
+    choiseList = module_pyLocate.printOutputFile('/tmp/pyLocate/outputpyLocateFile');
+
+    # print the options
+    for i in range(1,len(choiseList)+1):
+        print(str(i) + '--' + choiseList[i-1])
+
+
+    try:
+        choise = int(input('Number or press any key to continue \n'))
+    except ValueError:
+        choise == 'esci'
+
+
+
+    if choise > len(choiseList) or choise == 0:
+        choise = 'esci'
+    else:
+        file2open = choiseList[choise-1]
+        #print (file2open)
+        os.system('xdg-open ' + file2open )
+        choise = 'esci'
+
+# remove files
+os.system('rm -r /tmp/pyLocate')

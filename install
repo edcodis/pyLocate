@@ -1,0 +1,32 @@
+#!/bin/bash
+# Installation script
+
+echo Dirctory creation...
+mkdir $HOME/.pyLocateDir
+echo ...done
+
+
+
+
+echo coping files..
+cp pyLocate.conf $HOME/.config/
+cp pyLocate.conf $HOME/.pyLocateDir/
+
+chmod +x pyLocate
+cp pyLocate $HOME/.pyLocateDir/
+
+cp module_pyLocate.py $HOME/.pyLocateDir/
+
+cp pyLocate_init.sh $HOME/.pyLocateDir/
+
+chmod +x uninstall
+cp uninstall $HOME/.pyLocateDir
+echo ..done
+
+
+
+echo symbolic link creation [required root privileges]...
+sudo ln -s $HOME/.pyLocateDir/pyLocate /usr/bin/pyLocate
+echo ..done
+
+echo pyLocate installed
