@@ -28,10 +28,10 @@ os.system('$HOME/.pyLocateDir/pyLocate_init.sh')
 
 name2find = ''
 
-#warranty = 'pyLocate  Copyright (C) 2015  Edoardo Codispoti\n \
-#This program comes with ABSOLUTELY NO WARRANTY;\n \
-#This is free software, and you are welcome to redistribute it \
-#under certain conditions;'
+lic = 'pyLocate  Copyright (C) 2015  Edoardo Codispoti\n \
+This program comes with ABSOLUTELY NO WARRANTY;\n \
+This is free software, and you are welcome to redistribute it \
+under certain conditions;\n'
 
 #print(warranty)
 
@@ -39,8 +39,10 @@ choise = 0
 
 while choise != 'esci':
     os.system('clear')
+    if choise == 0:
+        print(lic )
 
-    inputStr = input('Name : ' + name2find)
+    inputStr = input('\n Name : ' + name2find)
     name2find = name2find + inputStr
 
     # search name2find

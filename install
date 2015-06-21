@@ -26,8 +26,10 @@ echo ...done
 
 
 echo coping files..
+echo $HOME >> pyLocate.conf
 cp pyLocate.conf $HOME/.config/
 cp pyLocate.conf $HOME/.pyLocateDir/
+rm pyLocate.conf
 
 chmod +x pyLocate
 cp pyLocate $HOME/.pyLocateDir/
