@@ -12,6 +12,7 @@ There is an installation script, to use it type in the terminal:
 
 A directory called .pyLocateDir is created in $HOME. All the program file can be found there.
 Also the uninstallation script can be found there
+I set a shortcut to open it, my advice is to create it.
 
 # Uninstallation
 If you don't like the program go to $HOME/.pyLocateDir and then type in a terminal:
