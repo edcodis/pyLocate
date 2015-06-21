@@ -14,7 +14,15 @@ A directory called .pyLocateDir is created in $HOME.
 All the program files can be found there.
 Also the uninstallation script can be found there.
 
+The installation script creates a symbolic link in /usr/bin so to run pyLocate open a terminal and type:
+
+	$ pyLocate
+	
+
 I set a shortcut to open it, my advice is to create it.
+
+
+
 
 # Uninstallation
 If you don't like the program go to $HOME/.pyLocateDir and then type in a terminal:
