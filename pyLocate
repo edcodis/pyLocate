@@ -1,6 +1,23 @@
 #!/usr/bin/python3
 # The program performs the locate command only in the directories specified in
 # the configuration file $HOME/.config/pyLocate.conf
+#
+#    Copyright (C) 2015  Edoardo Codispoti
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
 
 
 import sys
@@ -11,19 +28,26 @@ os.system('$HOME/.pyLocateDir/pyLocate_init.sh')
 
 name2find = ''
 
+#warranty = 'pyLocate  Copyright (C) 2015  Edoardo Codispoti\n \
+#This program comes with ABSOLUTELY NO WARRANTY;\n \
+#This is free software, and you are welcome to redistribute it \
+#under certain conditions;'
+
+#print(warranty)
+
 choise = 0
+
 while choise != 'esci':
     os.system('clear')
 
     inputStr = input('Name : ' + name2find)
     name2find = name2find + inputStr
 
-    # search name2find 
-    os.system('locate ' + name2find + ' -i -d /tmp/pyLocate/databasepyLocate >> /tmp/pyLocate/outputpyLocateFile' )
+    # search name2find
+    os.system('locate ' + name2find + ' -i -d /tmp/pyLocate/databasepyLocate >> /tmp/pyLocate/outputpyLocateFile')
 
-    choiseList = module_pyLocate.printOutputFile('/tmp/pyLocate/outputpyLocateFile');
+    choiseList = module_pyLocate.printOutputFile('/tmp/pyLocate/outputpyLocateFile')
 
-    # print the options
     for i in range(1,len(choiseList)+1):
         print(str(i) + '--' + choiseList[i-1])
 
