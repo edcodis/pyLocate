@@ -36,11 +36,13 @@ under certain conditions;\n'
 #print(warranty)
 
 choise = 0
+flag = 1
 
 while choise != 'esci':
     os.system('clear')
-    if choise == 0:
+    if flag:
         print(lic )
+        flag = 0
 
     inputStr = input('\n Name : ' + name2find)
     name2find = name2find + inputStr
@@ -55,7 +57,7 @@ while choise != 'esci':
 
 
     try:
-        choise = int(input('Number or press any key to continue \n'))
+        choise = int(input('Number or press any key to exit \n'))
     except ValueError:
         choise == 'esci'
 
