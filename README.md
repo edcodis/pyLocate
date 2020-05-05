@@ -1,5 +1,5 @@
 # pyLocate
-pyLocate is a program written in python to find files(everything in a file in linux) with locate comand only in chosen directories.
+pyLocate is a program written in python to find files (everything is a file in linux) with locate comand only in chosen directories.
 The program works on linux. It was written in ubuntu, I think that can works also in other distros.
 The program uses the file pyLocate.conf to create the database for the command locate.
 The configuration file can be find in $HOME/.config/ .
